@@ -6,7 +6,7 @@ Online food ordering system. Made this a year ago 2 nights before my solo thesis
   Use this as reference only. should not be use as project or thesis. Deploy for a client. there are many errors ill try to update those just create an issue. lost the latest files of this system. this should have paypal payment etc. 
 
 ### Features
-User
+User Serves as the Cashier
   1. User Products viewing.
   2. User Login / Registration.
   3. User can order and choose quantity.
@@ -14,7 +14,6 @@ User
   5. User can remove oncart orders.
   6. User can checkout order and serve as pending in admin side.
   7. User can track thier order status.
-  8. User can cancel order 
   
 Admin 
   1. Admin can monitor users activity.
