@@ -80,7 +80,7 @@ $(function(){
 
     });
     $('#a_products').click(function(){
-            //$('.content').load('../php/admin/category/products.php
+            $('.content').load('../php/admin/category/products.php');
             $('.content').fadeOut('3000',function(){
                 $('.content').html(' ');
                 $('.content').attr('class', 'content animated fadeInDown');
