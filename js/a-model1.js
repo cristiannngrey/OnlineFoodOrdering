@@ -79,16 +79,16 @@ app2.controller('orders', function($scope, $http) {
 	    .then(function (response) {$scope.ords = response.data.orders;});
 	},1000);
 
-	$scope.cancel = function(event){ 
-		   var id = $(event.target).attr('alt');
-		   var confirm = window.confirm('Cancel this order ?');
-		   if(confirm){
-			  $.post('php/cancel.php',{ id: id },function(data){
-			  	$('#notif').show();
-			  	$('#notif').html('Order has been canceled !');
-				  	setTimeout(function(){
-				  		$('#notif').fadeOut();
-				  	},1500);
+	$scope.delivered = function(event){ 
+		var id = $(event.target).attr('alt');
+		var confirm = window.confirm('Remove from Pending Orders ?');
+		if(confirm){
+		   $.post('php/cancel.php',{ id: id },function(data){
+			   $('#notif').show();
+			   $('#notif').html('Order has been Delivered !');
+				   setTimeout(function(){
+					   $('#notif').fadeOut();
+				   },1500);
 			  });   
 		   } else {
 

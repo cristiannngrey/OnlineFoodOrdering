@@ -49,22 +49,27 @@ if(isset($email)){ } else { header('location:index'); }
 						<div class="ordertrucking">
 							<table>
 								<tr> 
+									<th>Status</th>
 									<th>Order Id</th>
 									<th>Date</th> 
 									<th>Total</th>
 									<th>Action</th>
 								</tr>
 								<tr> 
+									<td><i class="fa fa-spinner fa-pulse active"></i> 
+									<p class="active">Proccessing</p>
 									<td>{{ x.order_id }}</td>
 									<td>{{ x.date }}</td> 
 									<td>{{ x.total }}</td>
-									<td><button alt="{{ x.order_id }}" ng-click="cancel($event)">Cancel</button><a href="summary.php?id={{ x.order_id }}&total={{ x.total }}&date={{ x.date }}" target="_blank"><button>View Orders</button></a></td>
+									<td><button alt="{{ x.order_id }}" ng-click="delivered($event)">Change to Delivered</button>&nbsp<a href="summary.php?id={{ x.order_id }}&total={{ x.total }}&date={{ x.date }}" target="_blank"><button>View Orders</button></a></td>
 								</tr>
 							</table>
-							<br>
-							<div class="box active" ng-bind="x in ords" ng-show="{{ x.status }} <= 1 ">
-								<i class="fa fa-spinner fa-pulse active"></i><br> 
-								<p class="active">Proccessing</p>
+							<br><!--
+							<div>
+								<div class="box active" ng-bind="x in ords" ng-show="{{ x.status }} <= 1 ">
+									<i class="fa fa-spinner fa-pulse active"></i><br> 
+									<p class="active">Proccessing Order</p>
+								</div>
 							</div>
 							<div class="box active" ng-bind="x in ords" ng-show="{{ x.status }} >= 2 ">
 								<i class="fa fa-spinner active"></i><br> 
@@ -85,7 +90,7 @@ if(isset($email)){ } else { header('location:index'); }
 							<div class="box" ng-bind="x in ords" ng-show="{{ x.status }} == 3 ">
 								<i class="fa fa-rocket active3"></i><br>
 								<p class="active3">Success</p>
-							</div> 
+							</div>  -->
 						</div>
 					</div> 
 				</div>
